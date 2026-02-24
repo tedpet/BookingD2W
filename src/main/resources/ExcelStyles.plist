@@ -1,0 +1,115 @@
+{
+	Fonts = {
+		asDefault = {
+			name = Arial;
+			fontHeightInPoints = 10;
+		};
+		default = {
+			name = Arial;
+			fontHeightInPoints = 10;
+		};
+		bold = {
+			name = "Arial Black";
+		};
+	};
+	Styles = {
+		flushLeftClass = {
+			alignment = "ALIGN_LEFT";
+		};
+		highlightBlue = {
+			fillForegroundColor = 15;
+			borderRight = "BORDER_THIN";
+			borderBottom = "BORDER_THIN";
+			fillPattern = "SOLID_FOREGROUND";
+			font = default;
+			alignment = "ALIGN_LEFT";
+		};
+		white = {
+			borderBottom = "BORDER_THIN";
+			borderRight = "BORDER_THIN";
+			fillForegroundColor = 9;
+			fillPattern = "SOLID_FOREGROUND";
+			font = default;
+			alignment = "ALIGN_LEFT";
+		};
+		highlightPink = {
+			borderRight = "BORDER_THIN";
+			borderBottom = "BORDER_THIN";
+			fillForegroundColor = 6;
+			fillPattern = "SOLID_FOREGROUND";
+			font = default;
+			alignment = "ALIGN_LEFT";
+		};
+		highlightLightBlue = {
+			borderRight = "BORDER_THIN";
+			borderBottom = "BORDER_THIN";
+			fillForegroundColor = 41;
+			fillPattern = "SOLID_FOREGROUND";
+			font = default;
+			alignment = "ALIGN_LEFT";
+		};
+		highlightGold = {
+			borderRight = "BORDER_THIN";
+			borderBottom = "BORDER_THIN";
+			fillForegroundColor = 5;
+			fillPattern = "SOLID_FOREGROUND";
+			font = default;
+			alignment = "ALIGN_LEFT";
+		};
+		highlightGreen = {
+			borderRight = "BORDER_THIN";
+			borderBottom = "BORDER_THIN";
+			fillForegroundColor = 17;
+			fillPattern = "SOLID_FOREGROUND";
+			font = default;
+			alignment = "ALIGN_LEFT";
+		};
+		isNormalClass = {
+			fillForegroundColor = 5;
+			fillPattern = "SOLID_FOREGROUND";
+			font = default;
+			alignment = "ALIGN_LEFT";
+		};
+		highlightLightGreen = {
+			borderBottom = "BORDER_THIN";
+			borderRight = "BORDER_THIN";
+			fillForegroundColor = 3;
+			fillPattern = "SOLID_FOREGROUND";
+			font = default;
+			alignment = "ALIGN_LEFT";
+		};
+		highlightYellow = {
+			borderBottom = "BORDER_THIN";
+			borderRight = "BORDER_THIN";
+			fillForegroundColor = 5;
+			fillPattern = "SOLID_FOREGROUND";
+			font = default;
+			alignment = "ALIGN_LEFT";
+		};
+		header = {
+			fillForegroundColor = 22;
+			fillPattern = "SOLID_FOREGROUND";
+			font = bold;
+			alignment = "ALIGN_CENTER";
+		};
+		topExcelHeader = {
+			fillForegroundColor = 22;
+			fillPattern = "SOLID_FOREGROUND";
+			font = bold;
+			alignment = "ALIGN_CENTER";
+			colspan = "3";
+		};
+		normal = {
+			font = default;
+			alignment = "ALIGN_LEFT";
+		};
+		default = {
+			font = default;
+			alignment = "ALIGN_RIGHT";
+		};
+		bold = {
+			font = bold;
+			alignment = "ALIGN_LEFT";
+		};
+	};
+}

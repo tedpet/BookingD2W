@@ -1,0 +1,67 @@
+ThePageWrapper : PageWrapper {}
+
+
+ReportForStepDueDate : CCSubmitLink {
+   action = reportForThisWeek;
+   title = "Show Report for Step by Due Date"
+   
+}
+
+selectShowPopUp : WOPopUpButton {
+  id = "ShowListID";
+  list = showList;
+  item = theShow;
+  selection = selectedShow;  
+  displayString = theShow.showName;
+  noSelectionString = "No Show Selected";
+}
+
+reportTypePopup : WOPopUpButton {
+  id = "RTBID";
+  list = reportTypeButtonList;
+  selection = reportTypeExtension;  
+  noSelectionString = "No Type Selected";
+}
+
+RTPObserveField : AjaxObserveField {
+	observeFieldID = "RTBID";
+	updateContainerID = "ShowDiv1";
+	//action = mainPopupAction;
+	fullSubmit = false;
+}
+
+ShowListUpdateContainer : AjaxUpdateContainer {
+	id = "ShowDiv1";
+}
+
+AForm : WOForm {
+  multipleSubmit = "true";
+}
+
+ButtonRepetition : WORepetition {
+	list = buttonList;
+	item = buttonLabel;
+}
+
+Button : WORadioButton {
+	id = buttonID;
+	checked = selected;
+	name = "buttongroup";
+}
+
+ButtonObserver : AjaxObserveField {
+	observeFieldID = buttonID;
+	updateContainerID = "ShowDiv1";
+	fullSubmit = true;
+//	action = submit;
+}
+
+ExportToExcelHL : WOHyperlink {
+	action = exportAllToExcel;
+}
+
+ExportEventsToExcel : WOHyperlink {
+	action = exportShowData;
+}
+
+

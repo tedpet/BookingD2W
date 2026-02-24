@@ -1,0 +1,46 @@
+
+
+
+ssh -i "~/Desktop/My_WO1.pem" ec2-user@ec2-44-200-176-88.compute-1.amazonaws.com
+
+ssh into Ubuntu server at AWS
+ssh -i "~/Desktop/My_WO1.pem" ubuntu@ec2-34-200-248-50.compute-1.amazonaws.com
+
+
+
+
+
+sudo mv BookingD2W.woapplication.tar.gz /opt/WOApplications/
+sudo mv BookingD2W.wowebserverresources.tar.gz /opt/WOWebServerResources/WebObjects
+cd /opt/WOApplications
+sudo tar -xvzf BookingD2W.woapplication.tar.gz
+sudo chown -R appserver:appserveradm BookingD2W.woa
+cd /opt/WOWebServerResources/WebObjects
+sudo tar -xvzf BookingD2W.wowebserverresources.tar.gz
+sudo chown -R appserver:appserveradm BookingD2W.woa
+sudo rm -R /opt/WOApplications/*.tar.gz
+sudo rm -R /opt/WOWebServerResources/WebObjects/*.tar.gz
+cd ~/
+
+sudo rm -R /opt/WOApplications/ASBriefsD2W.woa
+sudo rm -R /opt/WOWebServerResources/WebObjects/ASBriefsD2W.woa
+
+sudo vi /var/log/webobjects/Booking-1 
+
+
+
+
+
+mvn install:install-file -Dfile=/Users/asacksadmin/Developer/WO-goingToMaven/ABS2/src/main/resources/fonts-ext/ASHelveticaNeueMedium.jar -DgroupId=net.sf.jasperreports -DartifactId=fonts-ext-ASHelveticaNeueMedium -Dversion=1.0 -Dpackaging=jar
+
+cd 
+ln -s /Users/asacksadmin/Developer/Brief\ Reports/MyReports/ASLogo.jasper ASLogo.jasper
+ln -s /Users/asacksadmin/Developer/Brief\ Reports/MyReports/bulletlist.jasper bulletlist.jasper
+ln -s /Users/asacksadmin/Developer/Brief\ Reports/MyReports/CallReport.jasper CallReport.jasper
+ln -s /Users/asacksadmin/Developer/Brief\ Reports/MyReports/KickOffBrief.jasper KickOffBrief.jasper
+ln -s /Users/asacksadmin/Developer/Brief\ Reports/MyReports/kobbulletlist.jasper kobbulletlist.jasper
+ln -s /Users/asacksadmin/Developer/Brief\ Reports/MyReports/MAActionItemsSubReport.jasper MAActionItemsSubReport.jasper
+ln -s /Users/asacksadmin/Developer/Brief\ Reports/MyReports/MAItemsSubReport.jasper MAItemsSubReport.jasper
+ln -s /Users/asacksadmin/Developer/Brief\ Reports/MyReports/MeetingAgenda.jasper MeetingAgenda.jasper
+ln -s /Users/asacksadmin/Developer/Brief\ Reports/MyReports/MAItemsSubReport.jasper MAItemsSubReport.jasper
+ln -s /Users/asacksadmin/Developer/Brief\ Reports/MyReports/PWO.jasper PWO.jasper

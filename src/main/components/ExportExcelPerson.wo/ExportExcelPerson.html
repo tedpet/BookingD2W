@@ -1,0 +1,25 @@
+<webobject name=aWrapper>
+
+<div>
+<p><WEBOBJECT NAME = BackLink>Back</WEBOBJECT></p>
+
+<table name="Sheet 1" border="1" >
+<tr>
+      <th cellType = "CELL_TYPE_STRING" height = "24" class="header" width = "25">First Name</th>
+      <th cellType = "CELL_TYPE_STRING" class="header" width = "25">Last Name</th>
+      <th cellType = "CELL_TYPE_STRING" class="header" width = "25">Date Created</th>
+</tr>
+<wo:WORepetition list="$thePersonArray" item="$aPerson">
+<tr>
+        <td cellType = "CELL_TYPE_STRING" height = "20" width = "25"><wo:WOString value = "$aPerson.firstName" /></td>
+		<td cellType = "CELL_TYPE_STRING" height = "20" width = "25"><wo:WOString value = "$aPerson.lastName" /></td>
+		<td cellType = "CELL_TYPE_STRING" height = "20" width = "25"><wo:WOString value = "$aPerson.creationDate" /></td>
+		
+		<wo:loop list="$aPerson.personInstruments" item="$api">
+		<td cellType = "CELL_TYPE_STRING" height = "20" width = "25"><wo:WOString value = "$api.instrument.instrumentName" /></td>
+		</wo:loop>
+</tr>
+</wo:WORepetition>
+</table>
+</div>
+</webobject>

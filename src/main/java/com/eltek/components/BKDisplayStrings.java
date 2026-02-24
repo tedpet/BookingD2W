@@ -1,0 +1,90 @@
+/*
+ * Copyright (C) NetStruxr, Inc. All rights reserved.
+ *
+ * This software is published under the terms of the NetStruxr
+ * Public Software License version 0.5, a copy of which has been
+ * included with this distribution in the LICENSE.NPL file.  */
+package com.eltek.components;
+
+import com.webobjects.appserver.WOContext;
+import com.webobjects.directtoweb.D2WDisplayString;
+import com.webobjects.eocontrol.EOEnterpriseObject;
+import com.webobjects.foundation.NSArray;
+
+/**
+ * <div class="en">
+ * Full blown display string with all the bells and whistles.
+ * Of the value displayed is an EO, uses the userPresentableDescription()
+ * </div>
+ * 
+ * <div class="ja">
+ * このプロパティ・レベル・コンポーネントは文字列表示を担当します。
+ * EO の場合には、keyWhenRelationship 又は未設定の場合には userPresentableDescription() を使用します。
+ * </div>
+ * 
+ * @d2wKey class <div class="en"></div>
+ *               <div class="ja"></div>
+ * @d2wKey escapeHTML <div class="en"></div>
+ *                    <div class="ja">HTML をエスケープするかどうか</div>
+ * @d2wKey keyWhenRelationship <div class="en"></div>
+ *                             <div class="ja">EO の場合のリレーションシップ・キー</div>
+ * @d2wKey omitTags <div class="en"></div>
+ *                  <div class="ja"></div>
+ * @d2wKey valueWhenEmpty <div class="en"></div>
+ *                        <div class="ja">null 値の場合に表示する値</div>
+ */
+public class BKDisplayStrings extends D2WDisplayString {
+	/**
+	 * Do I need to update serialVersionUID?
+	 * See section 5.6 <cite>Type Changes Affecting Serialization</cite> on page 51 of the 
+	 * <a href="http://java.sun.com/j2se/1.4/pdf/serial-spec.pdf">Java Object Serialization Spec</a>
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	public String aStr=null;
+
+    public BKDisplayStrings(WOContext context) {
+        super(context);
+        
+        
+    }
+    
+    @Override
+    public Object objectPropertyValue() {
+      Object object = super.objectPropertyValue();
+      if (object instanceof EOEnterpriseObject) {
+        EOEnterpriseObject eo = (EOEnterpriseObject) object;
+
+        String keyWhenRelationship = keyWhenRelationship();
+        if (keyWhenRelationship != null || !"userPresentableDescription".equalsIgnoreCase(keyWhenRelationship)) {
+          Object val = eo.valueForKey(keyWhenRelationship);
+          if(val != null) {
+            return val;
+          }
+        }
+        return eo.userPresentableDescription();
+      }
+      return super.objectPropertyValue();
+    }
+    
+    /*
+     * method that returns a <br> delimited string from an array of strings.
+     * helps in a situation where a to-many relationship
+     */
+    public String value() {
+    	@SuppressWarnings("unchecked")
+    	NSArray<String> anArray = (NSArray<String>) super.objectPropertyValue();
+    	StringBuilder aBldr = new StringBuilder();
+    	
+    	if (anArray.count()==1) {
+    		aBldr.append(anArray.objectAtIndex(0));
+    	} else if(anArray.count()>1){
+    		for (String aStr : anArray) {
+    			aBldr.append(aStr);
+    			aBldr.append("<br>");
+    		}
+    	} 
+
+    	return aBldr.toString();
+    }
+}

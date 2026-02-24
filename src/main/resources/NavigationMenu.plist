@@ -1,0 +1,105 @@
+(
+	{
+		name = Root;
+		children = ("Home","Person", "Instrument", "Show", "Book", "Event", "Reports");
+	},
+	{
+		name = Home;
+		action = "session.navController.queryMainEvents";
+	},
+	{
+		name = "Person";
+		action = "session.navController.listPersonAction";
+		conditions = ("session.user.personSecurity.canManagePeople");
+		children = ("createPerson","searchPerson");
+	},
+	{
+		name = "createPerson";
+		displayName = "Create Person";
+		action = "session.navController.createPersonAction";
+	},
+	{
+		name = "searchPerson";
+		displayName = "Search Person";
+		action = "session.navController.queryPersonAction";
+	},
+	{
+		name = Show;
+		action = "session.navController.listShowsAction";
+		conditions = ("session.user.personSecurity.canManageShow");
+		children = ("createShow","searchShow");
+	},
+	{
+		name = "createShow";
+		displayName = "Create Show";
+		action = "session.navController.createShowAction";
+	},
+	{
+		name = "searchShow";
+		displayName = "Search Show";
+		action = "session.navController.queryShowAction";
+	},
+	{
+		name = Event;
+		action = "session.navController.listEventsAction";
+		conditions = ("session.user.personSecurity.canManageEvent");
+		children = ("createEvent","searchEvent");
+	},
+	{
+		name = "createEvent";
+		displayName = "Create Event";
+		action = "session.navController.createEventAction";
+	},
+	{
+		name = "searchEvent";
+		displayName = "Search Event";
+		action = "session.navController.queryEventAction";
+	},
+	{
+		name = Instrument;
+		action = "session.navController.listInstrumentAction";
+		conditions = ("session.user.personSecurity.canManageInstrument");
+		children = ("createInstrument","searchInstrument");
+	},
+	{
+		name = "createInstrument";
+		displayName = "Create Instrument";
+		action = "session.navController.createInstrumentAction";
+	},
+	{
+		name = "searchInstrument";
+		displayName = "Search Instrument";
+		action = "session.navController.queryInstrumentAction";
+	},
+	{
+		name = Book;
+		action = "session.navController.listBookAction";
+		conditions = ("session.user.personSecurity.canManageBook");
+		children = ("createBook","searchBook");
+	},
+	{
+		name = "createBook";
+		displayName = "Create Book";
+		action = "session.navController.createBookAction";
+	},
+	{
+		name = "searchBook";
+		displayName = "Search Book";
+		action = "session.navController.queryBookAction";
+	},
+	{
+		name = Reports;
+		action = "session.navController.reportAction";
+		children = ("Logout");
+	},
+	{
+		name = Logout;
+		directActionName = "logout";
+		/*
+		You may specify the direct action class using the
+		directActionClass binding.
+		*/
+		directActionClass = "ERXDirectAction";
+	}
+
+)

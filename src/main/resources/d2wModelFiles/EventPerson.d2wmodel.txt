@@ -1,0 +1,5 @@
+(
+    100 : (propertyType = 'r' and relationship.destinationEntity.name = 'Person') => keyWhenRelationship = "fullName" [com.webobjects.directtoweb.Assignment],
+    100 : (pageConfiguration = 'EditEmbeddedEventPerson' or pageConfiguration = 'CreateEmbeddedEventPerson') => displayPropertyKeys = ("person") [com.webobjects.directtoweb.Assignment],
+    100 : ((pageConfiguration = 'EditEmbeddedEventPerson' or pageConfiguration = 'CreateEmbeddedEventPerson') and propertyKey = 'person') => componentName = "ERD2WEditToOneRelationship" [com.webobjects.directtoweb.Assignment]
+)

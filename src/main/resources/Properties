@@ -19,7 +19,7 @@ er.extensions.ERXEC.useSharedEditingContext=false
 er.extensions.ERXEnterpriseObject.applyRestrictingQualifierOnInsert=true
 er.extensions.ERXEnterpriseObject.updateInverseRelationships=true
 
-er.directtoweb.ERD2WModel.additionalModelNames=("Reports.d2wmodel", "EventPerson.d2wmodel", "Experimental.d2wmodel", "Person.d2wmodel", "Show.d2wmodel", "Event.d2wmodel", "Instrument.d2wmodel", "Book.d2wmodel")
+er.directtoweb.ERD2WModel.additionalModelNames=("d2wModelFiles/Reports.d2wmodel", "d2wModelFiles/EventPerson.d2wmodel", "d2wModelFiles/Experimental.d2wmodel", "d2wModelFiles/Person.d2wmodel", "d2wModelFiles/Show.d2wmodel", "d2wModelFiles/Event.d2wmodel", "d2wModelFiles/Instrument.d2wmodel", "d2wModelFiles/Book.d2wmodel")
 
 # Misc Components
 #er.extensions.ERXWOForm.multipleSubmitDefault=true

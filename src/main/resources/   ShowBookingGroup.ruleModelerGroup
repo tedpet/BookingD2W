@@ -4,15 +4,15 @@
 <dict>
 	<key>modelPaths</key>
 	<array>
-		<string>Person.d2wmodel</string>
-		<string>Show.d2wmodel</string>
-		<string>Reports.d2wmodel</string>
-		<string>Instrument.d2wmodel</string>
-		<string>Experimental.d2wmodel</string>
-		<string>EventPerson.d2wmodel</string>
-		<string>Event.d2wmodel</string>
-		<string>Book.d2wmodel</string>
-		<string>user.d2wmodel</string>
+		<string>d2wModelFiles/Person.d2wmodel</string>
+		<string>d2wModelFiles/Show.d2wmodel</string>
+		<string>d2wModelFiles/Reports.d2wmodel</string>
+		<string>d2wModelFiles/Instrument.d2wmodel</string>
+		<string>d2wModelFiles/Experimental.d2wmodel</string>
+		<string>d2wModelFiles/EventPerson.d2wmodel</string>
+		<string>d2wModelFiles/Event.d2wmodel</string>
+		<string>d2wModelFiles/Book.d2wmodel</string>
+		<string>d2wModelFiles/user.d2wmodel</string>
 	</array>
 </dict>
 </plist>

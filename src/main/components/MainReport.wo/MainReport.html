@@ -1,0 +1,29 @@
+<webobject name = "ThePageWrapper">
+
+<div class="PrintReportMainTitle">Show Reports</div><br/>
+
+<webobject name = "AForm">
+<webobject name = "selectShowPopUp"/><wo:AjaxObserveField observeFieldID = "ShowListID" updateContainerID = "ShowDiv1" fullSubmit = false/>
+<webobject name = "reportTypePopup"/><webobject name = "RTPObserveField"/>
+<ul class="WeeklyButtons">
+<webobject name = "ButtonRepetition">
+				<li>
+					<webobject name = "Button"/> <wo:WOString value = "$buttonLabel"/> <webobject name = "ButtonObserver"/>
+				</li>
+</webobject>
+</ul>
+</webobject>
+<br/>
+
+<webobject name = "ShowListUpdateContainer">
+Run Report For: <wo:WOString value = "$selectedShow.showName"/><webobject name = "ReportForStepDueDate">Run Report</webobject>
+<br/><br/><br/><br/>
+<wo:WOString value = "$buttonLabel"/>
+</webobject>
+<br/><br/><br/>
+<webobject name = "ExportToExcelHL">Export</webobject> All to Excel!!<br><br>
+
+<webobject name = "ExportEventsToExcel">Export</webobject> Events to Excel!!
+
+
+</webobject>

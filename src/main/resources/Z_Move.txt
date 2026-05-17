@@ -1,0 +1,16 @@
+
+--add-exports java.base/sun.security.action=ALL-UNNAMED --add-exports java.base/sun.util.calendar=ALL-UNNAMED 
+
+
+cd ~/Downloads
+sudo mv BookingD2W.woapplication.tar.gz /opt/webobjects/WOApplications
+sudo mv BookingD2W.wowebserverresources.tar.gz /var/www/html/WebObjects
+cd /opt/webobjects/WOApplications; sudo tar -xvzf BookingD2W.woapplication.tar.gz; sudo chown -R appserver:appserveradm BookingD2W.woa; sudo rm -R *.tar.gz
+cd /var/www/html/WebObjects; sudo tar -xvzf BookingD2W.wowebserverresources.tar.gz; sudo chown -R appserver:appserveradm BookingD2W.woa; sudo rm -R *.tar.gz
+cd /home/ted/Downloads; ls -la
+
+
+
+# sudo nano /opt/webobjects/WOApplications/BookingD2W.woa/Contents/Resources/Properties
+
+application is loaded to: /opt/webobjects/WOApplications

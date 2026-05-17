@@ -1,0 +1,11 @@
+String: WOString {
+    valueWhenEmpty=localContext.valueWhenEmpty;
+    value = value;
+	escapeHTML = false;
+}
+
+Span: WOGenericContainer {
+	elementName = "span";
+	class = d2wContext.class;
+	omitTags = d2wContext.omitTags;
+}

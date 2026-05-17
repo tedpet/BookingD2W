@@ -1,0 +1,6 @@
+PopUpBoolean: WOPopUpButton {
+    list = list;
+    selection = value;
+    noSelectionString = emptyString;
+    item = item;
+}

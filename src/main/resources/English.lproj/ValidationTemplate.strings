@@ -1,0 +1,5 @@
+{
+	"UniqueConstraintException.login_idx" = "Please choose a different login (It must be unique).";
+	
+	
+}

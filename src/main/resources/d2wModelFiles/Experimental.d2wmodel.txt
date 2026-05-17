@@ -1,0 +1,7 @@
+(
+    100 : (task = 'edit' and smartRelationship != null and smartRelationship.destinationEntity.sharedObjectFetchSpecificationNames.count > (java.lang.Number)'0' and not (smartRelationship.isToMany = (java.lang.Number)'1')) => componentName = "TPD2WEditToOneRelationship" [com.webobjects.directtoweb.Assignment],
+    105 : (pageConfiguration = 'CreateEmbeddedPersonShowBook' and propertyKey = 'show') => isCategoryPopup = "true" [com.webobjects.directtoweb.Assignment],
+    105 : pageConfiguration = 'EditRelationshipEmbeddedBookPerson' => templateNameForEditRelationshipPage = "TPMODEditRelationshipPage" [com.webobjects.directtoweb.Assignment],
+    105 : ((pageConfiguration = 'CreateEmbeddedBookPerson' or pageConfiguration = 'EditEmbeddedBookPerson') and propertyKey = 'book') => customComponentName = "POPupD2W" [com.webobjects.directtoweb.Assignment],
+    105 : ((pageConfiguration = 'CreateEmbeddedBookPerson' or pageConfiguration = 'EditEmbeddedBookPerson') and propertyKey = 'book') => componentName = "D2WCustomComponent" [com.webobjects.directtoweb.Assignment]
+)

@@ -1,0 +1,24 @@
+aWrapper: EGWrapper {
+	enabled = true;
+	styles = application.data.Styles; //VALID
+	fonts = application.data.Fonts; //VALID
+	fileName="new excel.xls"
+}
+
+BackLink: WOHyperlink {
+	pageName = "Main";
+}
+
+SheetsForDate: WOGenericContainer {
+	elementName = "table";
+	name = anEvent.theEventDate;
+	border = 1;
+}
+showData : WORepetition {
+	list=anEvent.peopleForEvent;
+	item=aPerson;
+}
+
+personString : WOString {
+  value = aPerson.firstName;
+}

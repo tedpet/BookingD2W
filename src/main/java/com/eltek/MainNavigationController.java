@@ -17,6 +17,7 @@ import com.webobjects.directtoweb.ListPageInterface;
 import com.webobjects.directtoweb.QueryPageInterface;
 import com.webobjects.eoaccess.EODatabaseDataSource;
 import com.webobjects.eocontrol.EOEditingContext;
+import com.webobjects.foundation.NSLog;
 import com.webobjects.foundation.NSTimestamp;
 
 import er.directtoweb.pages.ERD2WQueryPage;
@@ -130,11 +131,15 @@ public class MainNavigationController {
 	@SuppressWarnings("unchecked")
 	public WOComponent queryMainEvents() {
 
+		NSLog.out.appendln("public WOComponent queryMainEvents() {"  );
+
 		EOEditingContext ec = ERXEC.newEditingContext();
 		ec.lock();
 
 		ERD2WQueryPage page = (ERD2WQueryPage)D2W.factory().queryPageForEntityNamed(Event.ENTITY_NAME, session());
 		
+		System.out.println("*******    queryMainEvents: " +page.toString());
+
 		Calendar fromDate = GregorianCalendar.getInstance();
 		Calendar toDate = GregorianCalendar.getInstance();
 		

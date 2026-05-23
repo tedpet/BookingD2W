@@ -13,6 +13,7 @@ import er.extensions.appserver.navigation.ERXNavigationManager;
 import er.extensions.foundation.ERXDictionaryUtilities;
 import er.extensions.foundation.ERXPatcher;
 import er.corebusinesslogic.ERCoreBusinessLogic;
+import er.corebusinesslogic.audittrail.ERCAuditTrailHandler;
 
 public class Application extends ERXApplication {
 	
@@ -26,16 +27,15 @@ public class Application extends ERXApplication {
 		setAllowsConcurrentRequestHandling(true);		
 	}
 	
-    @Override
-    public void finishInitialization() {
-    	super.finishInitialization();
-    	
-    	// Setup main navigation
-    	ERXNavigationManager.manager().configureNavigation();
-    	
-    	ERCoreBusinessLogic.sharedInstance().addPreferenceRelationshipToActorEntity("Person");
 
-    }
+	@Override
+	public void finishInitialization() {
+	    ERCAuditTrailHandler.initialize();  // before super — must catch the model group notification
+	    super.finishInitialization();
+
+	    ERXNavigationManager.manager().configureNavigation();
+	    ERCoreBusinessLogic.sharedInstance().addPreferenceRelationshipToActorEntity("Person");
+	}
     
     public void didFinishLaunching() {
     	super.didFinishLaunching();
